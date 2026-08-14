@@ -13,6 +13,25 @@ Uma aplicação moderna e responsiva de gerenciamento de tarefas (Todo List) con
 
 ---
 
+## 📸 Screenshots
+
+### Página Inicial
+![Página Inicial](./docs/screenshots/01-initial-page.png)
+
+### Com Tarefas
+![Com Tarefas](./docs/screenshots/02-with-tasks.png)
+
+### Tarefa Concluída
+![Tarefa Concluída](./docs/screenshots/03-completed-task.png)
+
+### Modo Escuro
+![Modo Escuro](./docs/screenshots/04-dark-mode.png)
+
+### Modo Edição
+![Modo Edição](./docs/screenshots/05-edit-mode.png)
+
+---
+
 ## ✨ Funcionalidades
 
 - ✅ **Adicionar Tarefas** - Crie novas tarefas de forma rápida e fácil
