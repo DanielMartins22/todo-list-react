@@ -843,143 +843,279 @@ Error generating stack: `+e.message+`
     background: rgba(255, 255, 255, 0.7);
   }
 `,oi=o((e=>{var t=Symbol.for(`react.transitional.element`),n=Symbol.for(`react.fragment`);function r(e,n,r){var i=null;if(r!==void 0&&(i=``+r),n.key!==void 0&&(i=``+n.key),`key`in n)for(var a in r={},n)a!==`key`&&(r[a]=n[a]);else r=n;return n=r.ref,{$$typeof:t,type:e,key:i,ref:n===void 0?null:n,props:r}}e.Fragment=n,e.jsx=r,e.jsxs=r})),I=o(((e,t)=>{t.exports=oi()}))();function si(){return(0,I.jsx)(ai,{children:(0,I.jsx)(ii,{position:`top-right`,autoClose:750,hideProgressBar:!1,newestOnTop:!0,closeOnClick:!0,draggable:!0,pauseOnHover:!0,theme:`colored`})})}var ci={add:()=>F.success(`Sua tarefa foi adicionada!`),delete:()=>F.success(`Tarefa deletada com sucesso!`),editMode:()=>F.info(`Modo editar acionado!`),save:()=>F.info(`Salvando sua tarefa...`),done:()=>F.success(`Tarefa concluída com sucesso!`),undo:()=>F.info(`Desfazendo sua escolha!`)},li=P.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: ${({theme:e})=>e.headerBackground};
-    color: ${({theme:e})=>e.text};
-    display: flex;
-    padding: 0 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: ${({theme:e})=>e.headerBackground};
+  color: ${({theme:e})=>e.text};
+  display: flex;
+  padding: 0 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  z-index: 1000;
+
+  @media (max-width: 768px) {
+    height: 50px;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 480px) {
+    height: 45px;
+    font-size: 14px;
+  }
 `,ui=P.main`
-     display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px; 
-    padding: 20px;
-    background: ${({theme:e})=>e.cardBackground};
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    width: 100%;
-    min-height: 500px;
-    max-width: 1000px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 100px auto 0 auto;
+  padding: 20px;
+  background: ${({theme:e})=>e.cardBackground};
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  width: 100%;
+  min-height: 500px;
+  max-width: 1000px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 60px;
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 50px;
+    padding: 10px;
+    min-height: auto;
+  }
 `,di=P.header`
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 `,fi=P.h1`
-    font-family: "Poppins", sans-serif;
-    font-size: 2rem;
-    color: ${({theme:e})=>e.text};
-    flex: 1;
-    text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  color: ${({theme:e})=>e.text};
+  flex: 1;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
 `,pi=P.button`
-   width: 32px;              
-  height: 32px;             
+  width: 32px;
+  height: 32px;
   border: none;
-  border-radius: 50%;       
+  border-radius: 50%;
   cursor: pointer;
   background: ${({theme:e})=>e.buttonBackground};
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   transition: background 0.3s ease;
 
   img {
-    width: 28px; 
+    width: 28px;
     height: 28px;
   }
 
   &:hover {
     background: ${({theme:e})=>e.buttonHover};
   }
+
+  @media (max-width: 480px) {
+    width: 28px;
+    height: 28px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
 `,mi=P.form`
-    display: flex;
-    width: 40%;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-    background: ${({theme:e})=>e.cardBackground};
-    color: ${({theme:e})=>e.text};
-    border-radius: 12px;
-    padding: 16px;
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  background: ${({theme:e})=>e.cardBackground};
+  color: ${({theme:e})=>e.text};
+  border-radius: 12px;
+  padding: 16px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `,hi=P.div`
-    display: flex;
-    flex-direction: column;
-    margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+
+  @media (max-width: 480px) {
+    margin-top: 30px;
+  }
 `,gi=P.label`
-    font-size: 0.9rem;
-    ${({theme:e})=>e.text};
-    margin-bottom: 10px;
+  font-size: 14px;
+  color: ${({theme:e})=>e.text};
+  margin-bottom: 10px;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `,_i=P.input`
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    text-align: center;
+  padding: 10px;
+  border: 2px solid ${({theme:e})=>e.border};
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+  background: ${({theme:e})=>e.inputBackground};
+  color: ${({theme:e})=>e.text};
+
   &:focus {
-    border-color: #007bff;
+    border-color: ${({theme:e})=>e.focusBorder};
     outline: none;
   }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 8px;
+  }
 `,vi=P.button`
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    padding: 15px 5px;
-    width: 140px;
-    max-width: 140px;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    &:hover {
-      background: #218838;
-    }
+  margin: 10px auto 0 auto;
+  padding: 15px 5px;
+  width: 140px;
+  background: ${({theme:e})=>e.doneBackground};
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    background: ${({theme:e})=>e.buttonHover};
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
 `,yi=P.section`
-	width: 60%;
-	background: #fff;
-	border-radius: 12px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-	margin-bottom: 20px;
-	padding: 16px;
-`,bi=P.ul`
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-`,xi=P.li`
+  width: 60%;
+  background: ${({theme:e})=>e.cardBackground};
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 16px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`,bi=P.select`
+  width: 100%;
+  max-width: 200px;
+  padding: 10px;
+  border: 2px solid ${({theme:e})=>e.border};
+  border-radius: 8px;
+  font-size: 16px;
+  background: ${({theme:e})=>e.inputBackground};
+  color: ${({theme:e})=>e.text};
+  cursor: pointer;
+  transition: border-color 0.3s ease, background 0.3s ease;
+
+  &:focus {
+    border-color: ${({theme:e})=>e.focusBorder};
+    outline: none;
+  }
+
+  &:hover {
+    background: ${({theme:e})=>e.buttonHover};
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    padding: 6px;
+  }
+`,xi=P.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  max-height: 400px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({theme:e})=>e.border};
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: ${({theme:e})=>e.buttonHover};
+  }
+`,Si=P.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
-	padding: 12px 14px;
-	background: ${e=>e.$turnGreen?`green`:`#f8f9fa`} ;
-	border: 1px solid #e5e7eb;
-	border-radius: 8px;
-	color: ${e=>e.$turnGreen?`#f8f9fa`:`#333`} ;
-	font-size: 24px;
-`,Si=P.div`
+  padding: 12px 14px;
+  background: ${({theme:e,$turnGreen:t})=>t?e.doneBackground:e.cardBackground};
+  border: 1px solid ${({theme:e})=>e.border};
+  border-radius: 8px;
+  color: ${({theme:e})=>e.text};
+  font-size: 20px;
+  margin-top: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+`,Ci=P.div`
   display: flex;
   gap: 8px;
   margin-left: auto;
-`,Ci=P.button`
+
+  @media (max-width: 480px) {
+    width: 100%;
+    justify-content: flex-end;
+  }
+`,wi=P.button`
   width: 40px;
   height: 40px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  background: #dc3545;       /* vermelho */
+  background: #dc3545;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -994,49 +1130,50 @@ Error generating stack: `+e.message+`
     background: #a71d2a;
   }
 
-  & + button {
-    margin-left: 6px;
+  @media (max-width: 480px) {
+    width: 36px;
+    height: 36px;
   }
-`,wi=P(Ci)`
-  background: #ffc107;       /* amarelo */
+`,Ti=P(wi)`
+  background: #ffc107; /* amarelo */
   &:hover {
     background: #e0a800;
   }
-`,Ti=P(Ci)`
-  background: #28a745;       /* verde */
+`,Ei=P(wi)`
+  background: ${({theme:e})=>e.doneBackground}; /* verde do tema */
   &:hover {
     background: #218838;
   }
-`,Ei=P(Ci)`
-  background: #17a2b8;       /* azul turquesa */
+`,Di=P(wi)`
+  background: #17a2b8; /* azul turquesa */
   &:hover {
     background: #117a8b;
   }
-`,Di=P.footer`
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 60px;
-	text-align: center;
-	font-size: 0.9rem;
-	z-index: 999;
-	background: #222;
-	color: white;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-	padding: 20px;
+`,Oi=P.footer`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  font-size: 14px;
+  z-index: 999;
+  background: ${({theme:e})=>e.headerBackground};
+  color: ${({theme:e})=>e.text};
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+  padding: 20px;
 
-	a {
-		color: #007bff;
-		text-decoration: none;
-		cursor: pointer;
+  a {
+    color: ${({theme:e})=>e.focusBorder};
+    text-decoration: none;
     margin-left: 10px;
-	}
+    cursor: pointer;
+  }
 
-	a:hover {
-		text-decoration: underline;
-	}
-`;function Oi({darkMode:e,setDarkMode:t}){let[n,r]=(0,N.useState)(``),[i,a]=(0,N.useState)([]),o=()=>{if(n.trim()===``)return;let e={id:crypto.randomUUID(),inputValue:n,isEditing:!1,editValue:n,isDone:!1};a([...i,e]),r(``),ci.add()};function s(e){a(i.map(t=>t.id===e?{...t,isEditing:!0,editValue:t.inputValue}:t)),ci.editMode()}function c(e,t){a(i.map(n=>n.id===e?{...n,editValue:t}:n))}function l(e){a(i.map(t=>t.id===e?{...t,inputValue:t.editValue,isEditing:!1}:t)),ci.save()}let u=e=>{a(i.filter(t=>t.id!==e)),ci.delete()},d=e=>{a(i.map(t=>t.id===e?{...t,isDone:!t.isDone}:t)),i.find(t=>t.id===e).isDone?ci.undo():ci.done()};return(0,I.jsxs)(I.Fragment,{children:[(0,I.jsx)(li,{children:(0,I.jsxs)(di,{children:[(0,I.jsx)(fi,{children:`Lista de Tarefas`}),(0,I.jsx)(pi,{onClick:()=>t(!e),children:e?(0,I.jsx)(`img`,{src:Qn,alt:`Tema Claro`}):(0,I.jsx)(`img`,{src:Xn,alt:`Tema Escuro`})})]})}),(0,I.jsxs)(ui,{children:[(0,I.jsxs)(mi,{children:[(0,I.jsxs)(hi,{children:[(0,I.jsx)(gi,{children:`Nova tarefa`}),(0,I.jsx)(_i,{type:`text`,value:n,onChange:e=>r(e.target.value),placeholder:`Digite sua tarefa...`})]}),(0,I.jsx)(vi,{onClick:o,type:`button`,children:`Adicionar`})]}),(0,I.jsx)(yi,{children:(0,I.jsx)(bi,{children:i.map(e=>(0,I.jsx)(xi,{$turnGreen:e.isDone,children:e.isEditing?(0,I.jsxs)(I.Fragment,{children:[(0,I.jsx)(_i,{type:`text`,value:e.editValue,onChange:t=>c(e.id,t.target.value)}),(0,I.jsx)(Ei,{type:`button`,onClick:()=>l(e.id),children:(0,I.jsx)(`img`,{src:Zn,alt:`Salvar`})})]}):(0,I.jsxs)(I.Fragment,{children:[e.inputValue,(0,I.jsxs)(Si,{children:[(0,I.jsx)(wi,{type:`button`,onClick:()=>s(e.id),children:(0,I.jsx)(`img`,{src:Yn,alt:`Editar`})}),(0,I.jsx)(Ci,{type:`button`,onClick:()=>u(e.id),children:(0,I.jsx)(`img`,{src:qn,alt:`Excluir`})}),(0,I.jsx)(Ti,{type:`button`,onClick:()=>d(e.id),children:(0,I.jsx)(`img`,{src:Jn,alt:`Concluir`})})]})]})},e.id))})})]}),(0,I.jsx)(Di,{children:(0,I.jsxs)(`p`,{children:[`Desenvolvido por`,(0,I.jsx)(`a`,{href:`https://www.linkedin.com/in/danielmartins-frontend/`,rel:`noopener noreferrer`,target:`_blank`,children:`Daniel Martins`})]})}),(0,I.jsx)(si,{})]})}var ki=Kn`
+  a:hover {
+    text-decoration: underline;
+  }
+`;function ki({darkMode:e,setDarkMode:t}){let[n,r]=(0,N.useState)(``),[i,a]=(0,N.useState)([]),[o,s]=(0,N.useState)(`all`),c=()=>{if(n.trim()===``)return;let e={id:crypto.randomUUID(),inputValue:n,isEditing:!1,editValue:n,isDone:!1};a([...i,e]),r(``),ci.add()},l=i.filter(e=>o===`completed`?e.isDone:o!==`pending`||!e.isDone);function u(e){a(i.map(t=>t.id===e?{...t,isEditing:!0,editValue:t.inputValue}:t)),ci.editMode()}function d(e,t){a(i.map(n=>n.id===e?{...n,editValue:t}:n))}function f(e){a(i.map(t=>t.id===e?{...t,inputValue:t.editValue,isEditing:!1}:t)),ci.save()}let p=e=>{a(i.filter(t=>t.id!==e)),ci.delete()},m=e=>{a(i.map(t=>t.id===e?{...t,isDone:!t.isDone}:t)),i.find(t=>t.id===e).isDone?ci.undo():ci.done()};return(0,I.jsxs)(I.Fragment,{children:[(0,I.jsx)(li,{children:(0,I.jsxs)(di,{children:[(0,I.jsx)(fi,{children:`Lista de Tarefas`}),(0,I.jsx)(pi,{onClick:()=>t(!e),children:e?(0,I.jsx)(`img`,{src:Qn,alt:`Tema Claro`}):(0,I.jsx)(`img`,{src:Xn,alt:`Tema Escuro`})})]})}),(0,I.jsxs)(ui,{children:[(0,I.jsxs)(mi,{children:[(0,I.jsxs)(hi,{children:[(0,I.jsx)(gi,{children:`Nova tarefa`}),(0,I.jsx)(_i,{type:`text`,value:n,onChange:e=>r(e.target.value),placeholder:`Digite sua tarefa...`})]}),(0,I.jsx)(vi,{onClick:c,type:`button`,children:`Adicionar`})]}),(0,I.jsxs)(yi,{children:[(0,I.jsxs)(bi,{value:o,onChange:e=>s(e.target.value),children:[(0,I.jsx)(`option`,{value:`all`,children:`Todas`}),(0,I.jsx)(`option`,{value:`pending`,children:`Pendentes`}),(0,I.jsx)(`option`,{value:`completed`,children:`Completadas`})]}),(0,I.jsx)(xi,{children:l.map(e=>(0,I.jsx)(Si,{$turnGreen:e.isDone,children:e.isEditing?(0,I.jsxs)(I.Fragment,{children:[(0,I.jsx)(_i,{type:`text`,value:e.editValue,onChange:t=>d(e.id,t.target.value)}),(0,I.jsx)(Di,{type:`button`,onClick:()=>f(e.id),children:(0,I.jsx)(`img`,{src:Zn,alt:`Salvar`})})]}):(0,I.jsxs)(I.Fragment,{children:[e.inputValue,(0,I.jsxs)(Ci,{children:[(0,I.jsx)(Ti,{type:`button`,onClick:()=>u(e.id),children:(0,I.jsx)(`img`,{src:Yn,alt:`Editar`})}),(0,I.jsx)(wi,{type:`button`,onClick:()=>p(e.id),children:(0,I.jsx)(`img`,{src:qn,alt:`Excluir`})}),(0,I.jsx)(Ei,{type:`button`,onClick:()=>m(e.id),children:(0,I.jsx)(`img`,{src:Jn,alt:`Concluir`})})]})]})},e.id))})]})]}),(0,I.jsx)(Oi,{children:(0,I.jsxs)(`p`,{children:[`Desenvolvido por`,(0,I.jsx)(`a`,{href:`https://www.linkedin.com/in/danielmartins-frontend/`,rel:`noopener noreferrer`,target:`_blank`,children:`Daniel Martins`})]})}),(0,I.jsx)(si,{})]})}var Ai=Kn`
 
     * {
         margin: 0;
@@ -1054,4 +1191,4 @@ Error generating stack: `+e.message+`
         color: ${({theme:e})=>e.text};
         transition: all 0.3s ease;
     }
-`,Ai={background:`#f5f5f5`,text:`#000000`,headerBackground:`#ffffff`,cardBackground:`#ffffff`,buttonBackground:`#e0e0e0`,buttonHover:`#cfcfcf`},ji={background:`#121212`,text:`#ffffff`,headerBackground:`#1f1f1f`,cardBackground:`#1e1e1e`,buttonBackground:`#2c2c2c`,buttonHover:`#3d3d3d`};function Mi(){let[e,t]=(0,N.useState)(!1);return(0,N.useEffect)(()=>{let e=localStorage.getItem(`darkMode`);e&&t(JSON.parse(e))},[]),(0,N.useEffect)(()=>{localStorage.setItem(`darkMode`,JSON.stringify(e))},[e]),(0,I.jsx)(N.StrictMode,{children:(0,I.jsxs)(Pn,{theme:e?ji:Ai,children:[(0,I.jsx)(ki,{}),(0,I.jsx)(Oi,{darkMode:e,setDarkMode:t})]})})}(0,We.createRoot)(document.getElementById(`root`)).render((0,I.jsx)(Mi,{}));
+`,ji={background:`#f5f5f5`,text:`#000000`,headerBackground:`#ffffff`,cardBackground:`#ffffff`,buttonBackground:`#e0e0e0`,buttonHover:`#cfcfcf`,inputBackground:`#ffffff`,border:`#ddd`,focusBorder:`#007bff`,doneBackground:`#28a745`},Mi={background:`#121212`,text:`#ffffff`,headerBackground:`#1f1f1f`,cardBackground:`#1e1e1e`,buttonBackground:`#2c2c2c`,buttonHover:`#3d3d3d`,inputBackground:`#2c2c2c`,border:`#444`,focusBorder:`#66b2ff`,doneBackground:`#218838`};function Ni(){let[e,t]=(0,N.useState)(!1);return(0,N.useEffect)(()=>{let e=localStorage.getItem(`darkMode`);e&&t(JSON.parse(e))},[]),(0,N.useEffect)(()=>{localStorage.setItem(`darkMode`,JSON.stringify(e))},[e]),(0,I.jsx)(N.StrictMode,{children:(0,I.jsxs)(Pn,{theme:e?Mi:ji,children:[(0,I.jsx)(Ai,{}),(0,I.jsx)(ki,{darkMode:e,setDarkMode:t})]})})}(0,We.createRoot)(document.getElementById(`root`)).render((0,I.jsx)(Ni,{}));
