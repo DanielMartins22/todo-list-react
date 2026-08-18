@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  position: absolute;
+  position: fixed; /* fixo no topo */
   top: 0;
   left: 0;
   width: 100%;
@@ -28,7 +28,7 @@ export const TodoMain = styled.main`
   display: flex;
   gap: 20px;
   justify-content: center;
-  margin: 100px auto 0 auto;
+  margin: 80px auto 0 auto; /* espaço para não ficar atrás do header */
   padding: 20px;
   background: ${({ theme }) => theme.cardBackground};
   border-radius: 12px;
@@ -39,12 +39,12 @@ export const TodoMain = styled.main`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 70px;
     padding: 15px;
   }
 
   @media (max-width: 480px) {
-    margin-top: 50px;
+    margin-top: 60px;
     padding: 10px;
     min-height: auto;
   }
@@ -60,7 +60,7 @@ export const Header = styled.header`
 
   @media (max-width: 480px) {
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
   }
 `;
 
@@ -230,7 +230,6 @@ export const Select = styled.select`
     padding: 8px;
   }
 
-  
   @media (max-width: 480px) {
     font-size: 12px;
     padding: 6px;
@@ -276,14 +275,13 @@ export const TodoLi = styled.li`
   margin-top: 10px;
 
   @media (max-width: 768px) {
-    font-size: 18px;
+    font-size: 19px;
     padding: 10px;
   }
 
   @media (max-width: 480px) {
-    font-size: 16px;
-    flex-direction: column;
-    align-items: flex-start;
+    font-size: 18px;
+    padding: 10px 8px;
     gap: 8px;
   }
 `;
@@ -292,10 +290,10 @@ export const ContainerButtons = styled.div`
   display: flex;
   gap: 8px;
   margin-left: auto;
+  flex-shrink: 0;
 
   @media (max-width: 480px) {
-    width: 100%;
-    justify-content: flex-end;
+    gap: 6px;
   }
 `;
 
@@ -348,11 +346,11 @@ export const SaveButton = styled(DeleteButton)`
 `;
 
 export const Footer = styled.footer`
-  position: absolute;
+  position: fixed; /* antes estava absolute, agora permite scroll */
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 60px;
+  min-height: 60px;
   text-align: center;
   font-size: 14px;
   z-index: 999;

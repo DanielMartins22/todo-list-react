@@ -5,30 +5,35 @@ import TodoList from './pages/TodoList/';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { darkTheme, lightTheme } from './styles/theme';
 
-
 function Main() {
-	const [ darkMode, setDarkMode ] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
-	useEffect(() => {
-		const savedTheme = localStorage.getItem('darkMode')
-		if (savedTheme) {
-			setDarkMode(JSON.parse(savedTheme))
-		}
-	}, []);
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('darkMode');
+    if (savedTheme) {
+      setDarkMode(JSON.parse(savedTheme));
+    }
+  }, []);
 
-	useEffect(() => {
-		localStorage.setItem('darkMode', JSON.stringify(darkMode))
-	}, [darkMode]);
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  }, [darkMode]);
 
-	return (
-		<StrictMode>
-			<ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-				<GlobalStyles />
-				<TodoList darkMode={darkMode} setDarkMode={setDarkMode} />
-			</ThemeProvider>
-	   	</StrictMode>
-	)
+  return (
+    <StrictMode>
+      <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+        <GlobalStyles />
+        <TodoList darkMode={darkMode} setDarkMode={setDarkMode} />
+      </ThemeProvider>
+    </StrictMode>
+  );
 }
 
+const container = document.getElementById('root');
 
-createRoot(document.getElementById("root")).render(<Main />);
+// reaproveita a root se já existir
+if (!container._reactRoot) {
+  container._reactRoot = createRoot(container);
+}
+
+container._reactRoot.render(<Main />);
