@@ -4,5 +4,5 @@ import { defineConfig } from "vite";
 // https://vite.dev/config/
 export default defineConfig({
 	plugins: [react()],
-	base: 'https://danielmartins22.github.io/todo-list-react/'
+	base: '/todo-list-react/'
 });
