@@ -24,18 +24,20 @@ import {
 	Input,
 	InputLabel,
 	SaveButton,
+	Select,
 	Title,
 	TodoForm,
 	TodoLi,
 	TodoMain,
 	TodoSection,
-	TodoUl,
+	TodoUl
 } from './styles';
 
 function TodoList({ darkMode, setDarkMode }) {
 	const [inputValue, setInputValue] = useState('');
-
 	const [listItens, setListItens] = useState([]);
+	const [filter, setFilter] = useState("all");
+
 
 	
 	const handleClick = () => {
@@ -49,12 +51,18 @@ function TodoList({ darkMode, setDarkMode }) {
 			isDone: false,
 		};
 
-		setListItens([...listItens, newObjectItem]);
+		setListItens([...listItens, newObjectItem] );
 
 		setInputValue('');
 
 		toastHelper.add();
 	};
+
+	const filteredTodos = listItens.filter(todo => {
+		if (filter === "completed") return todo.isDone;
+		if (filter === "pending") return !todo.isDone
+		return true
+	})
 
 	function handleEdit(id) {
 		setListItens(
@@ -67,6 +75,7 @@ function TodoList({ darkMode, setDarkMode }) {
 		);
 		toastHelper.editMode();
 	}
+
 
 	function handleEditChange(id, newValue) {
 		setListItens(
@@ -141,9 +150,15 @@ function TodoList({ darkMode, setDarkMode }) {
 						Adicionar
 					</ButtonAdd>
 				</TodoForm>
+						
 				<TodoSection>
+					<Select value={filter} onChange={e => setFilter(e.target.value)}>
+						<option value="all">Todas</option>
+						<option value="pending" >Pendentes</option>
+						<option value="completed">Completadas</option>
+					</Select>
 					<TodoUl>
-						{listItens.map((item) => (
+						{filteredTodos.map((item) => (
 							<TodoLi key={item.id} $turnGreen={item.isDone}>
 								{item.isEditing ? (
 									<>

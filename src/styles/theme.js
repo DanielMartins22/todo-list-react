@@ -5,6 +5,10 @@ export const lightTheme = {
   cardBackground: "#ffffff",
   buttonBackground: "#e0e0e0",
   buttonHover: "#cfcfcf",
+  inputBackground: "#ffffff",
+  border: "#ddd",
+  focusBorder: "#007bff",
+  doneBackground: "#28a745"
 };
 
 export const darkTheme = {
@@ -14,4 +18,8 @@ export const darkTheme = {
   cardBackground: "#1e1e1e",
   buttonBackground: "#2c2c2c",
   buttonHover: "#3d3d3d",
+  inputBackground: "#2c2c2c",
+  border: "#444",
+  focusBorder: "#66b2ff",
+  doneBackground: "#218838"
 };
