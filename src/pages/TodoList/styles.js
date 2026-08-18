@@ -230,6 +230,7 @@ export const Select = styled.select`
     padding: 8px;
   }
 
+  
   @media (max-width: 480px) {
     font-size: 12px;
     padding: 6px;
