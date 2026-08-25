@@ -7,4 +7,5 @@ export const toastHelper = {
     save: () => toast.info("Salvando sua tarefa...") ,
     done: () => toast.success("Tarefa concluída com sucesso!") ,
     undo: () => toast.info("Desfazendo sua escolha!"),
+    duplicate: () => toast.error("Essa tarefa já existe!") ,
 }

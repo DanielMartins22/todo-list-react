@@ -10,6 +10,7 @@ import SunImg from '../../assets/sun.png';
 import ToastContainerCustom from '../../components/ToastContainer';
 import { toastHelper } from '../../helpers/toastHelper';
 
+import { useEffect } from 'react';
 import {
 	ButtonAdd,
 	ButtonToggleTheme,
@@ -39,9 +40,31 @@ function TodoList({ darkMode, setDarkMode }) {
 	const [filter, setFilter] = useState("all");
 
 
+
+	useEffect(() => {
+		const savedList = localStorage.getItem('listItens');
+		if (savedList) {
+			setListItens(JSON.parse(savedList));
+		}
+	}, [])
+
+	useEffect(() => {
+		localStorage.setItem('listItens', JSON.stringify(listItens));
+	}, [listItens])
+
+
 	
 	const handleClick = () => {
 		if (inputValue.trim() === '') return;
+
+		const exists = listItens.some(
+			(item) => item.inputValue.toLowerCase() === inputValue.toLowerCase()
+		);
+
+		if (exists) {
+			toastHelper.duplicate();
+			return;
+		}
 
 		const newObjectItem = {
 			id: crypto.randomUUID(),
@@ -52,6 +75,7 @@ function TodoList({ darkMode, setDarkMode }) {
 		};
 
 		setListItens([...listItens, newObjectItem] );
+
 
 		setInputValue('');
 
@@ -86,6 +110,20 @@ function TodoList({ darkMode, setDarkMode }) {
 	}
 
 	function saveEdit(id) {
+		const itemToEdit = listItens.find(item => item.id === id);
+
+		// Verifica duplicado ignorando o próprio item
+		const exists = listItens.some(
+			(item) =>
+			item.id !== id &&
+			item.inputValue.toLowerCase() === itemToEdit.editValue.toLowerCase()
+		);
+
+		if (exists) {
+			toastHelper.duplicate();
+			return;
+		}
+		
 		setListItens(
 			listItens.map((item) => {
 				if (item.id === id) {
