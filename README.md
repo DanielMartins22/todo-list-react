@@ -9,6 +9,10 @@ Uma aplicação moderna e responsiva de gerenciamento de tarefas (Todo List) con
 ![Node](https://img.shields.io/badge/Node-%3E%3D18-green?style=flat-square&logo=nodedotjs)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
+---
+
+### 🌐 [Acesse Agora - https://danielmartins22.github.io/todo-list-react/](https://danielmartins22.github.io/todo-list-react/)
+
 </div>
 
 ---
@@ -67,8 +71,17 @@ Uma aplicação moderna e responsiva de gerenciamento de tarefas (Todo List) con
 
 ### 1. Clone o repositório
 
+Escolha uma das opções abaixo:
+
+**Option A - Com HTTPS (recomendado para começar):**
 ```bash
-git clone https://github.com/seu-usuario/todo-list-react.git
+git clone https://github.com/danielmartins22/todo-list-react.git
+cd todo-list-react
+```
+
+**Option B - Com SSH (se você já tem SSH configurado):**
+```bash
+git clone git@github.com:danielmartins22/todo-list-react.git
 cd todo-list-react
 ```
 
@@ -79,7 +92,7 @@ Com **npm**:
 npm install
 ```
 
-Com **pnpm**:
+Com **pnpm** (mais rápido):
 ```bash
 pnpm install
 ```
@@ -129,6 +142,88 @@ npm run preview
 # ou
 pnpm preview
 ```
+
+---
+
+## 🚀 Deploy no GitHub Pages
+
+### 1. Configurar GitHub Pages
+
+1. Vá para **Settings** do seu repositório
+2. Navegue até **Pages** (no menu lateral esquerdo)
+3. Em "Build and deployment":
+   - **Source**: Selecione `GitHub Actions`
+   - **Branch**: `main` (ou sua branch padrão)
+
+### 2. Configurar o Workflow
+
+O GitHub Actions automatizará o build e deploy. Crie o arquivo `.github/workflows/deploy.yml`:
+
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          base_path: /todo-list-react
+```
+
+### 3. Fazer Push do Código
+
+```bash
+git add .
+git commit -m "Configurar GitHub Actions para deploy"
+git push origin main
+```
+
+### 4. Monitorar o Deploy
+
+1. Vá à aba **Actions** do seu repositório
+2. Veja a workflow em execução
+3. Após completar (✅), seu site estará online
+
+### 5. Acessar o Site
+
+```
+https://danielmartins22.github.io/todo-list-react/
+```
+
+> ⏱️ **Tempo de espera**: 2-5 minutos para o GitHub processar o build
+
+### ⚠️ Troubleshooting
+
+| Problema | Solução |
+|----------|---------|
+| Build falha | Verifique `npm run build` localmente |
+| Site em branco | Confirme que `base: '/todo-list-react/'` está em `vite.config.js` |
+| Workflow não executa | Verifique se o arquivo está em `.github/workflows/deploy.yml` |
+| Erro 404 | Aguarde mais alguns minutos para o deploy completar |
 
 ---
 
