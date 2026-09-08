@@ -303,33 +303,12 @@ Contribuições são bem-vindas! Sinta-se à vontade para:
 
 ---
 
-## 📝 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
----
-
 ## 👨‍💻 Autor
 
 **Daniel Martins** - Frontend Developer
 
 - LinkedIn: [@danielmartins-frontend](https://www.linkedin.com/in/danielmartins-frontend/)
-
----
-
-## 📞 Suporte
-
-Se encontrar algum problema ou tiver sugestões, por favor abra uma [Issue](../../issues) ou entre em contato através do LinkedIn.
-
----
-
-## 🙏 Agradecimentos
-
-- Comunidade React
-- Vite team
-- Styled-components
-- React-Toastify
-
+- 
 ---
 
 <div align="center">
